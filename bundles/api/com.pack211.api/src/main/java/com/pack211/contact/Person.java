@@ -2,19 +2,23 @@ package com.pack211.contact;
 
 import com.pack211.Model;
 
+import java.util.Date;
+
 /**
  * A container class to represent a basic user.  More complex implementations should extend this class.
  *
  * @author <a href="mailto:david@.biz">David Fay</a>
  * @since 0.0.1
  */
-public class User implements Model {
+public class Person implements Model {
     private String title;
     private String firstName;
     private String middleName;
     private String lastName;
     private String suffix;
-    private Contact contactInfo;
+    private Contact contact;
+    private Date dob;
+    private Gender gender = Gender.Male;
 
     public String getTitle() {
         return title;
@@ -56,12 +60,28 @@ public class User implements Model {
         this.suffix = suffix;
     }
 
-    public Contact getContactInfo() {
-        return contactInfo;
+    public Contact getContact() {
+        return contact;
     }
 
-    public void setContactInfo(Contact contactInfo) {
-        this.contactInfo = contactInfo;
+    public void setContact(Contact contact) {
+        this.contact = contact;
+    }
+
+    public Date getDob() {
+        return dob;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     /**
@@ -78,5 +98,10 @@ public class User implements Model {
         String suffix = this.suffix == null ? "" : this.suffix.trim();
 
         return title.concat(firstName).concat(middleName).concat(lastName).concat(suffix);
+    }
+
+    public enum Gender {
+        Male,
+        Female
     }
 }
