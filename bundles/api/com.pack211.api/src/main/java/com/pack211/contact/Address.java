@@ -10,7 +10,7 @@ public class Address {
     private String street1;
     private String street2;
     private String city;
-    private State state;
+    private USProperty state;
     private ZipCode zipCode;
 
     public Address() {
@@ -68,7 +68,7 @@ public class Address {
      * @return the enumeration of the state, commonwealth or territory
      * @since 0.0.1
      */
-    public State getState() {
+    public USProperty getState() {
         return state;
     }
 
@@ -76,7 +76,7 @@ public class Address {
      * @param state the enumeration of the state, commonwealth or territory
      * @since 0.0.1
      */
-    public void setState(State state) {
+    public void setState(USProperty state) {
         this.state = state;
     }
 
